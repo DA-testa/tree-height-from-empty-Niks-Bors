@@ -3,16 +3,50 @@
 import sys
 import threading
 import numpy
-
-
-def compute_height(n, parents):
-    # Write this function
+def read(self)
+self.n=int(sys.stdin.readline())
+self.parent =list(map(int,sys.stdin.readline().split()))
+self.nodes = None
+self.root = None
+def build_tree(self):
+    self.nodes = [ [] for i in range(self.n)]
+for child_index in range(self.n):
+    parent_index = self.parent[child_index]
+    if parent_index == -1:
+        self.root = child_index
+    else:
+        self.nodes[parent_index].append(child_index)
+def get_max_height(self, current, height):
+    if not self.nodes[current]:
+        return height
     max_height = 0
-    # Your code here
+    for c in self.nodes[current]:
+        max_height = max(max_height,self.get_max_height(c,height+1))
     return max_height
+
+#def compute_height(n, parents):
+def compute_height(self):
+    self.build_tree()
+    return self.get_max_height(self.root, 1)    
+   # max_height = 0
+    # Your code here
+    #return max_height
 
 
 def main():
+    tree = TreeHeight()
+    tree.read()
+    print(tree.compute_height())
+    # text = input()
+   # if "F" in text:
+       # fileName = input()
+       # file = open(fileName, "r")
+       # print(file)
+    
+    #elif "a" in text:
+       # text = input()
+        #ms = find_mismatch(text)
+       # print(ms)
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
