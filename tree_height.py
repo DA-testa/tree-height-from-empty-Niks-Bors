@@ -28,11 +28,26 @@ def compute_height(n,parent):
 
 
 def main():
-    n=len(parent)
+    text = input("Ievadat:")
+    if "F" in text:
+        fileName = input()
+        if ".a" in fileName:
+            return
+        if ".a" not in fileName:
+            fileName = "test/"+fileName
+            with open(fileName, 'r') as file:
+                n = int(file,readline())
+            tree = compute_height(n,parent)
+            print(tree)
+    elif "I" in text:
+        n = int(input())
+        parent = list(map(int.input().split()))
+
     
-    tree = compute_height(n,parent)
+    
+    
     #tree.read()
-    print(tree.compute_height())
+    
     # text = input()
    # if "F" in text:
        # fileName = input()
