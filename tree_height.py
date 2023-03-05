@@ -2,17 +2,62 @@
 
 import sys
 import threading
-import numpy
+import numpy  
+def compute_height(n,parent):
+    max_height =0
+    for j in range(n):
+        z=j
+        pag =1
+        while (parent[z] != -1):
+            pag+=1
+            z=parent[z]
+        max_height = max(max_height,pag)
 
-
-def compute_height(n, parents):
-    # Write this function
-    max_height = 0
-    # Your code here
     return max_height
 
 
+
+
+   
+   #l = compute_height.parent
+   #while l:
+        #max_height +=1
+        #l=l.parent
+     #Your code here
+    #return max_height
+
+
 def main():
+    text = input("Ievadat:")
+    if "F" in text:
+        fileName = input()
+        if ".a" in fileName:
+            return
+        if ".a" not in fileName:
+            fileName = "test/"+fileName
+            with open(fileName, 'r') as file:
+                n = int(file,readline())
+            tree = compute_height(n,parent)
+            print(tree)
+    elif "I" in text:
+        n = input()
+        parent = list(map(input().split()))
+
+    
+    
+    
+    #tree.read()
+    
+    # text = input()
+   # if "F" in text:
+       # fileName = input()
+       # file = open(fileName, "r")
+       # print(file)
+    
+    #elif "a" in text:
+       # text = input()
+        #ms = find_mismatch(text)
+       # print(ms)
     # implement input form keyboard and from files
     
     # let user input file name to use, don't allow file names with letter a
