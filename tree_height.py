@@ -3,14 +3,31 @@
 import sys
 import threading
 import numpy  
-def compute_height(n,parents):  
-   max_height = 0
-   l = compute_height.parent
-   while l:
-        max_height +=1
-        l=l.parent
-     #Your code here
+def limenavektors(z,n,parent):  
+    if(parent[z] == -1):
+        return 1
+    if(height[z]!=-1):
+        return height[z]
+    height[z]=limenavektors(parent[i], parent, height)+1
+    return height[i]
+def compute_height(n,parent):
+    max_height = 0
+    height = [-1]*(n)
+    for j in range(n):
+        max_height = max(res, rec(z, parent, height))
+
     return max_height
+
+
+
+
+   
+   #l = compute_height.parent
+   #while l:
+        #max_height +=1
+        #l=l.parent
+     #Your code here
+    #return max_height
 
 
 def main():
