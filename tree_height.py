@@ -7,10 +7,10 @@ def compute_height(n,parents):
    max_height = 0
    l = compute_height.parent
    while l:
-    max_height +=1
-    l=l.parent
+        max_height +=1
+        l=l.parent
      #Your code here
-return max_height
+    return max_height
 
 
 def main():
