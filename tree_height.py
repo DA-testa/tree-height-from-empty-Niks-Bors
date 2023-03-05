@@ -28,9 +28,10 @@ def compute_height(n,parent):
 
 
 def main():
+    n=len(parent)
     
-    tree = TreeHeight()
-    tree.read()
+    tree = compute_height(n,parent)
+    #tree.read()
     print(tree.compute_height())
     # text = input()
    # if "F" in text:
