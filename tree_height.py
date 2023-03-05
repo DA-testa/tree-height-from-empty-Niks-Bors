@@ -3,18 +3,15 @@
 import sys
 import threading
 import numpy  
-def limenavektors(z,n,parent):  
-    if(parent[z] == -1):
-        return 1
-    if(height[z]!=-1):
-        return height[z]
-    height[z]=limenavektors(parent[i], parent, height)+1
-    return height[i]
 def compute_height(n,parent):
-    max_height = 0
-    height = [-1]*(n)
+    max_height =0
     for j in range(n):
-        max_height = max(res, rec(z, parent, height))
+        z=j
+        pag =1
+        while (parent[z] != -1):
+            pag+=1
+            z=parent[z]
+        max_height = max(max_height,pag)
 
     return max_height
 
@@ -31,6 +28,7 @@ def compute_height(n,parent):
 
 
 def main():
+    
     tree = TreeHeight()
     tree.read()
     print(tree.compute_height())
