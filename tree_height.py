@@ -40,8 +40,8 @@ def main():
             tree = compute_height(n,parent)
             print(tree)
     elif "I" in text:
-        n = int(input())
-        parent = list(map(int.input().split()))
+        n = input()
+        parent = list(map(input().split()))
 
     
     
