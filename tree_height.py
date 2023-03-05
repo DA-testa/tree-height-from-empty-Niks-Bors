@@ -2,35 +2,16 @@
 
 import sys
 import threading
-import numpy
-def read(self)
-self.n=int(sys.stdin.readline())
-self.parent =list(map(int,sys.stdin.readline().split()))
-self.nodes = None
-self.root = None
-def build_tree(self):
-    self.nodes = [ [] for i in range(self.n)]
-for child_index in range(self.n):
-    parent_index = self.parent[child_index]
-    if parent_index == -1:
-        self.root = child_index
-    else:
-        self.nodes[parent_index].append(child_index)
-def get_max_height(self, current, height):
-    if not self.nodes[current]:
-        return height
-    max_height = 0
-    for c in self.nodes[current]:
-        max_height = max(max_height,self.get_max_height(c,height+1))
-    return max_height
+import numpy  
+def compute_height(n,parents):  
+   max_height = 0
+   l = compute_height.parent
+   while l:
+    max_height +=1
+    l=l.parent
+     #Your code here
 
-#def compute_height(n, parents):
-def compute_height(self):
-    self.build_tree()
-    return self.get_max_height(self.root, 1)    
-   # max_height = 0
-    # Your code here
-    #return max_height
+return max_height
 
 
 def main():
